@@ -46,16 +46,13 @@ ridgereg <- function(formula, data, lambda = 0){
   y_hat <- as.vector(y_h)
 
 # Save the results into a class object
-  res <- list(call = call, formula = formula,
+  ridgereg <- list(call = call, formula = formula,
                    data= data1, coefficients = B_hat,
                    fitted_values = y_hat)
-  class(res) = "ridgereg" #define the class of the list of results
-  return(res)
+  class(ridgereg) = "ridgereg" #define the class of the list of results
+  return(ridgereg)
 }
 
-print.ridgereg <- function(x, ...){
-  print(x$coefficients)
-}
 
 
 
