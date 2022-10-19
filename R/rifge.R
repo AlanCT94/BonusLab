@@ -1,5 +1,5 @@
 
-library(stats)
+
 
 ridgereg <- function(formula, data, lambda){
   stopifnot(class(formula) == "formula") #check if it's formula
