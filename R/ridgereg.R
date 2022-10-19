@@ -4,11 +4,12 @@
 #' @param data A data frame
 #' @param lambda Hyperparameter of the regression
 #'
-#' @return
+#' @return res
 #' @export
 #'
-#' @examples
-ridgereg <- function(formula, data, lambda){
+#' @examples data(iris)
+#'           ridgereg(Petal.Length~Species, iris,2)
+ridgereg <- function(formula, data, lambda = 0){
   stopifnot(class(formula) == "formula") #check if it's formula
   stopifnot(is.data.frame(data)) # check if it's data frame
   stopifnot(is.numeric(lambda), lambda >= 0) # check if lambda is a + number
@@ -52,6 +53,9 @@ ridgereg <- function(formula, data, lambda){
   return(res)
 }
 
+print.ridgereg <- function(x, ...){
+  print(x$coefficients)
+}
 
 
 

@@ -4,7 +4,7 @@
 \alias{ridgereg}
 \title{Ridge regression}
 \usage{
-ridgereg(formula, data, lambda)
+ridgereg(formula, data, lambda = 0)
 }
 \arguments{
 \item{formula}{The Y and X variables of the regression}
@@ -13,6 +13,13 @@ ridgereg(formula, data, lambda)
 
 \item{lambda}{Hyperparameter of the regression}
 }
+\value{
+res
+}
 \description{
 Ridge regression
+}
+\examples{
+data(iris)
+          ridgereg(Petal.Length~Species, iris,2)
 }
