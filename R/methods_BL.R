@@ -2,6 +2,6 @@
 
 # print()
 
-print.ridgereg <- function(x,...){
+print.ridgereg <- function(x, ...){
   print(x$coefficients)
 }

@@ -1,6 +1,13 @@
-
-
-
+#' Ridge regression
+#'
+#' @param formula The Y and X variables of the regression
+#' @param data A data frame
+#' @param lambda Hyperparameter of the regression
+#'
+#' @return
+#' @export
+#'
+#' @examples
 ridgereg <- function(formula, data, lambda){
   stopifnot(class(formula) == "formula") #check if it's formula
   stopifnot(is.data.frame(data)) # check if it's data frame
@@ -41,7 +48,7 @@ ridgereg <- function(formula, data, lambda){
   ridgereg <- list(call = call, formula = formula,
                    data= data1, coefficients = B_hat,
                    fitted_values = y_hat)
-  class(ridgereg) <- "ridgerg" #define the class of the list of results
+  class(ridgereg) = "ridgereg" #define the class of the list of results
   return(ridgereg)
 }
 
