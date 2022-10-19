@@ -15,7 +15,7 @@ ridgereg <- function(formula, data, lambda){
   data1 <- format(deparse(substitute(data)))
 # Mean and sd of each column
   x_mean <- colMeans(X[,-1]) #We dont calculate the Interceptor column [,-1]
-  sd_x <- apply(X[,-1], 2, sd)
+  sd_x <- apply(X[,-1], 2, stats::sd)
 
 # Normalize the X matrix (x_norm)
   x <- sweep(X[,-1], 2, x_mean, "-") # subtract the mean to each X
