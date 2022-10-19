@@ -7,8 +7,7 @@ Authors@R:
     person("Kerstin", "Nilsson", email="kerni714@student.liu.se", role = "aut"))
 Description: It calculates the statistics of the ridge regression and create 
             S3 methods to return the coeffcients.
-License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
-    license
+License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.1
