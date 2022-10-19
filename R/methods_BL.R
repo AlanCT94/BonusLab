@@ -14,3 +14,11 @@
 print.ridgereg <- function(x, ...){
   print(x$coefficients)
 }
+
+coef.ridgereg <- function(x, ...){
+  print(x$coefficients)
+}
+
+predict.ridgereg <- function(x, ...){
+  print(x$fitted_values)
+}
