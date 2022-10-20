@@ -46,6 +46,7 @@ ridgereg <- function(formula, data, lambda = 0){
   y_hat <- as.vector(y_h)
 
 # Save the results into a class object
+  call<-match.call()
   ridgereg <- list(call = call, formula = formula,
                    data= data1, coefficients = B_hat,
                    fitted_values = y_hat)
