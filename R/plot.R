@@ -6,7 +6,7 @@ library(nycflights13)
 data("flights")
 data("airports")
 
-fligths %>% dplyr::select(origin, dest)
+# fligths %>% dplyr::select(origin, dest)
 
 # create de function
 # Selecting data from both table and creating a new table
@@ -47,17 +47,15 @@ delay1 <- table %>% group_by(dest, lat, lon) %>%
 # delay<- rename(delay, mean = mean1)
 
 
-p1 <- ggplot(delay1, aes(x = lat, y= mean1)) +
+p1 <- ggplot(delay1, aes(x = lat, y= mean_delay)) +
   geom_point(colour= "red") + geom_smooth() + ggtitle("Mean vs Lattitude") +
   theme(plot.title = element_text(hjust = 0.5))
-p2 <- ggplot(delay, aes(x= lon, y = mean)) +
+p2 <- ggplot(delay1, aes(x= lon, y = mean_delay)) +
   geom_point(colour="green") + geom_smooth() + ggtitle("Mean vs Longitude") +
   theme(plot.title = element_text(hjust = 0.5))
 p3 <- ggplot(delay1, aes(x=lat, y= lon, colour = mean_delay))+
   geom_point()  + ggtitle("Longitude vs Lattitude") +
   theme(plot.title = element_text(hjust = 0.5))
-p4 <- ggplot(delay1, aes(x=lat, y= mean1))+
-  geom_point() + geom_smooth() + ggtitle("Longitude vs Lattitude") +
-  theme(plot.title = element_text(hjust = 0.5))
-p4
-(p1+p2)/(p3+p4)
+
+
+(p1+p2)/(p3)
