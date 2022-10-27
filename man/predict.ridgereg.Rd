@@ -4,10 +4,12 @@
 \alias{predict.ridgereg}
 \title{Predict}
 \usage{
-\method{predict}{ridgereg}(object, ...)
+\method{predict}{ridgereg}(object, ndf, ...)
 }
 \arguments{
 \item{object}{Refers to the object return by ridge regression}
+
+\item{ndf}{New data frame to predict}
 
 \item{...}{argument to be passed to methods}
 }

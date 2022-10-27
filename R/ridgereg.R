@@ -18,6 +18,7 @@ ridgereg <- function(formula, data, lambda = 0){
 # Extract the X and Y
   X <- stats::model.matrix(formula, data)
   y <- data[,all.vars(formula)[1]]
+  stopifnot(is.numeric(y))
 
 
   data1 <- format(deparse(substitute(data)))
